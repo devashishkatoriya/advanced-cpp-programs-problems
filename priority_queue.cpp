@@ -1,4 +1,10 @@
 
+/*
+git remote add origin https://github.com/user/repo.git
+
+git remote -v
+*/
+
 // Simple priority queue example
 
 #include <iostream>
