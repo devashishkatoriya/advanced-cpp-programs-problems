@@ -97,6 +97,24 @@ public:
         cout << " " << node->val;
         inorder(node->right);
     }
+
+    void preorder(Node<T> *node)
+    {
+        if (node == NULL)
+            return;
+        cout << " " << node->val;
+        preorder(node->left);
+        preorder(node->right);
+    }
+
+    void postorder(Node<T> *node)
+    {
+        if (node == NULL)
+            return;
+        postorder(node->left);
+        postorder(node->right);
+        cout << " " << node->val;
+    }
 };
 
 int main()
@@ -105,9 +123,16 @@ int main()
 
     t.insert(5);
     t.insert(3);
+    t.insert(7);
 
     cout << "\nInorder:";
     t.inorder(t.get_root());
+
+    cout << "\nPreorder:";
+    t.preorder(t.get_root());
+
+    cout << "\nPostorder:";
+    t.postorder(t.get_root());
 
     return 0;
 }
