@@ -1,4 +1,6 @@
 
+// Program for circular queue using array
+
 #include <iostream>
 
 using namespace std;
@@ -7,7 +9,7 @@ template <class T>
 class Queue
 {
     int front, end;
-    T arr[50];       // Make changes here
+    T arr[50]; // Make changes here
 
 public:
     Queue()
@@ -41,7 +43,7 @@ public:
                 front = end = 0;
             }
             arr[front] = val;
-            front = (front + 1) % 50;       // Make changes here
+            front = (front + 1) % 50; // Make changes here
         }
     }
     T dequeue()
@@ -54,7 +56,7 @@ public:
         else
         {
             T val = arr[end];
-            end = (end + 1) % 50;       // Make changes here
+            end = (end + 1) % 50; // Make changes here
 
             if (front == end)
             {
