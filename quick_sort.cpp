@@ -18,19 +18,25 @@ int partition(int arr[], int l, int h)
 {
     int pivot = arr[h];
 
-    int i = l, j = h - 1, temp;
+    int i = l - 1, j = l, temp;
 
-    while (i <= j)
+    while (j < h)
     {
-        if (arr[i] > arr[j])
+        if (arr[j] < pivot)
         {
+            i++;
             temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
         }
+        j++;
     }
 
-    return pivot;
+    temp = arr[i + 1];
+    arr[i + 1] = arr[h];
+    arr[h] = temp;
+
+    return i + 1;
 }
 
 void quick_sort(int arr[], int l, int h)
@@ -39,7 +45,7 @@ void quick_sort(int arr[], int l, int h)
     {
         int pos = partition(arr, l, h);
 
-        quick_sort(arr, l, pos);
+        quick_sort(arr, l, pos - 1);
         quick_sort(arr, pos + 1, h);
     }
 }
