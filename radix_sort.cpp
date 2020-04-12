@@ -5,8 +5,8 @@
 
 using namespace std;
 
-int max1 = 3;
-int N = 50;
+int max1 = 3; // Largest element = 10^max1
+int N = 50;   // Maximum number of elements
 
 void display(int arr[], int n)
 {
