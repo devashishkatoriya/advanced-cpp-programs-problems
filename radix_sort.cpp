@@ -70,3 +70,11 @@ int main()
 
     return 0;
 }
+
+/*
+OUTPUT
+
+Array: 7 9 5 3 13 1 6
+Array: 1 3 5 6 7 9 13
+
+*/
