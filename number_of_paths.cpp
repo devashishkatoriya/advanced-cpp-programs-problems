@@ -36,45 +36,31 @@ ABCFI, ABEHI, ADGHI, ADEFI, ADEHI, ABEFI.
 */
 
 #include <iostream>
+
 using namespace std;
-
-void display_char(int i, int j)
-{
-    char disp[3][3] = {{'A', 'B', 'C'},
-                       {'D', 'E', 'F'},
-                       {'G', 'H', 'I'}};
-
-    cout << disp[i][j] << endl;
-}
 
 void n_paths(int r, int c, int i, int j, int *n)
 {
     cout << endl;
-    //cout << i << j << endl;
+    cout << i << j << endl;
 
-    if (i < r - 1)
-    {
-        display_char(i, j);
-        i = i + 1;
-        n_paths(r, c, i, j, n);
-    }
-    if (j < c - 1)
-    {
-        display_char(i, j);
-        j = j + 1;
-        n_paths(r, c, i, j, n);
-    }
-    display_char(i, j);
     if (i == r - 1 && j == c - 1)
         *n = *n + 1;
+    else
+    {
+        if (i < r - 1)
+            n_paths(r, c, i + 1, j, n);
+        if (j < c - 1)
+            n_paths(r, c, i, j + 1, n);
+    }
 }
 
 int main()
 {
-    int r = 3, c = 3, n = 0;
+    int r = 2, c = 8, n = 0;
 
     n_paths(r, c, 0, 0, &n);
-    cout << "Ans:" << n << endl;
+    cout << "\nAns:" << n << endl;
 
     return 0;
 }
