@@ -1,4 +1,5 @@
 /*
+Special Keyboard Problem:
 
 Imagine you have a special keyboard with the following keys: 
 Key 1:  Prints 'A' on screen
@@ -48,10 +49,7 @@ int max_prints(int n)
 {
     if (n <= 5)
         return n;
-    else
-    {
-        return max(2 * max_prints(n - 1), 3 * (n - 1));
-    }
+    return max(2 * max_prints(n - 1), 3 * (n - 1));
 }
 
 int main()
@@ -59,7 +57,6 @@ int main()
     int n = 7, res;
 
     res = max_prints(n);
-
     cout << res << endl;
 
     return 0;
