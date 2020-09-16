@@ -12,12 +12,13 @@
             "presentation": {
                 "focus": true,
                 "clear": true
-            }
+            },
+            "problemMatcher": []
         },
         {
             "type": "shell",
-            "label": "g++.exe build active file",
-            "command": "C:\\Program Files\\C\\mingw64\\bin\\g++.exe",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\MinGW\\bin\\g++.exe",
             "args": [
                 "-g",
                 "${file}",
@@ -25,8 +26,11 @@
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "C:\\Program Files\\C\\mingw64\\bin"
-            }
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
