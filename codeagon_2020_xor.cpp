@@ -9,8 +9,8 @@ using namespace std;
 
 int main()
 {
-    int n = 4, k = 3, xor1, count = 0;
-    int arr[] = {1,2,3,1};
+    int n = 3, k = 3, xor1, count = 0;
+    int arr[] = {1,2,5};
 
     for(int i=0; i<=n-k; i++)
     {
@@ -19,7 +19,7 @@ int main()
         {
             xor1 = xor1^arr[j];
         }
-        if (xor1!=0)
+        if (xor1 != 0)
         {
             count++;
         }
