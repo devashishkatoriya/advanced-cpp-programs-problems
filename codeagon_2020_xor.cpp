@@ -7,10 +7,9 @@
 
 using namespace std;
 
-int main()
+int getCount(const int arr[], const int n, const int k)
 {
-    int n = 3, k = 3, xor1, count = 0;
-    int arr[] = {1,2,5};
+    int count = 0, xor1;
 
     for(int i=0; i<=n-k; i++)
     {
@@ -24,6 +23,16 @@ int main()
             count++;
         }
     }
-    cout<<count<<endl;
+
+    return count;
+}
+
+
+int main()
+{
+    int n = 3, k = 3;
+    int arr[] = {1,2,5};
+
+    cout<<getCount(arr, n, k)<<endl;
     return 0;
 }

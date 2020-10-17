@@ -9,13 +9,14 @@ using namespace std;
 vector<int> all_permutations(const int A, const int B)
 {
     vector<int> arr;
+    int i;
 
-    for(int i=1; i<B; i++)
+    for(i=1; i<B; i++)
     {
         arr.push_back(i);
     }
     arr.push_back(A);
-    for(int i=B; i<A; i++)
+    for(i=B; i<A; i++)
     {
         arr.push_back(i);
     }
