@@ -2,7 +2,9 @@
 
 using namespace std;
 
-void display(int **arr, const int n)
+int COUNT = 0;
+
+void display(bool **arr, const int n)
 {
     cout<<endl;
     for(int i=0; i<n; i++)
@@ -15,33 +17,34 @@ void display(int **arr, const int n)
     }
 }
 
-bool isSafe(int **board, const int n, const int row, const int col)
+bool isSafe(bool **board, const int n, const int row, const int col)
 {
     int i, j;
 
     /* Check this row on left side */
     for (i = 0; i < col; i++)
-        if (board[row][i] == 1)
+        if (board[row][i] == true)
             return false;
 
     /* Check upper diagonal on left side */
     for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
-        if (board[i][j] == 1)
+        if (board[i][j] == true)
             return false;
 
     /* Check lower diagonal on left side */
     for (i = row, j = col; j >= 0 && i < n; i++, j--)
-        if (board[i][j] == 1)
+        if (board[i][j] == true)
             return false;
 
     return true;
 }
 
-void n_queens(int **board, const int n, const int pos)
+void n_queens(bool **board, const int n, const int pos)
 {
     if (pos >= n)
     {
         display(board, n);
+        COUNT++;
         return;
     }
 
@@ -49,9 +52,9 @@ void n_queens(int **board, const int n, const int pos)
     {
         if (isSafe(board, n, i, pos))
         {
-            board[i][pos] = 1;
+            board[i][pos] = true;
             n_queens(board, n, pos+1);
-            board[i][pos] = 0;
+            board[i][pos] = false;
         }
     }
 }
@@ -59,15 +62,21 @@ void n_queens(int **board, const int n, const int pos)
 
 int main()
 {
-    const int n = 4;
+    const int n = 5;
 
-    int **board = new int*[n];
+    bool **board = new bool*[n];
     for(int i=0; i<n; i++)
     {
-        board[i] = new int[n];
+        board[i] = new bool[n];
+        for(int j=0; j<n; j++)
+        {
+            board[i][j] = false;
+        }
     }
 
     n_queens(board, n, 0);
+
+    cout<<"\n\nTotal possible ways: "<<COUNT<<endl;
 
     return 0;
 }
