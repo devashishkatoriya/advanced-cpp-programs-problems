@@ -37,8 +37,8 @@ void generate_permutation(vector<char> op, const int k)
 {
     if ((k >= MIN1) && (k <= MAX1))
     {
-        display_array(op);
-        //write_to_file(op);
+        //display_array(op);
+        write_to_file(op);
         CNT++;
     }
     if (k < MAX1)
@@ -59,6 +59,8 @@ int main()
     {
         arr.push_back(char(i));
     }
+
+    /*
     for(int i='A'; i<='Z'; i++)
     {
         arr.push_back(char(i));
@@ -67,32 +69,33 @@ int main()
     {
         arr.push_back(char(i));
     }
+    */
     arr.push_back('!');
     arr.push_back('@');
-    arr.push_back('#');
-    arr.push_back('$');
-    arr.push_back('%');
-    arr.push_back('&');
-    arr.push_back('*');
-    arr.push_back('(');
-    arr.push_back(')');
-    arr.push_back('+');
-    arr.push_back('-');
-    arr.push_back('=');
+    //arr.push_back('#');
+    //arr.push_back('$');
+    //arr.push_back('%');
+    //arr.push_back('&');
+    //arr.push_back('*');
+    //arr.push_back('(');
+    //arr.push_back(')');
+    //arr.push_back('+');
+    //arr.push_back('-');
+    //arr.push_back('=');
     arr.push_back('_');
-    arr.push_back('>');
-    arr.push_back('<');
+    //arr.push_back('>');
+    //arr.push_back('<');
 
     const int n = arr.size();
     cout<<"\nSize of input space: "<<n<<endl;
-    
+
     MIN1 = 8;
     MAX1 = 8;
     cout<<"\nMinimum Length of Req. Key: "<<MIN1<<endl;
     cout<<"Maximum Length of Req. Key: "<<MAX1<<endl;
 
     // Open the output file
-    fout.open("output_size_8.txt");
+    fout.open("E:\\output_size_8.txt");
 
     vector<char> op1;
 

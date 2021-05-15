@@ -116,7 +116,6 @@ int main()
     return 0;
 }
 
-
 /* OUTPUT
 
 h e l l o w o r l d
