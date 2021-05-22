@@ -45,6 +45,13 @@ public:
 		x = a;
 		y = b;
 	}
+	Player(const Player& obj2)
+	{
+		cout << "\n Inside Copy constructor.";
+		x = obj2.x;
+		y = obj2.y;
+	}
+
 	~Player()
 	{
 		cout << "\nInside destructor";
@@ -52,15 +59,29 @@ public:
 
 	void display()
 	{
+		cout << "\nInside display";
 		cout << "\n X:"<< x << " Y:" << y;
 	}
+
+	Player& operator=(const Player& o1);
 };
+
+Player& Player::operator=(const Player& o1)
+{
+	cout << "\n Inside overloaded operator=";
+	Player o2(o1.x, o1.y);
+	return o2;
+}
+
 
 int main()
 {
-	Player player;
+	Player player(1, 2);
+	Player p2;
 
-	player.display();
+	p2 = player;
+
+	p2.display();
 
 	return 0;
 }
