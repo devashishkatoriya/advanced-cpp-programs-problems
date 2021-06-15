@@ -4,7 +4,7 @@
         {
             "label": "g++ compile and run",
             "type": "shell",
-            "command": "del ./a.exe ; g++ -O2 '${file}' ; ./a.exe",
+            "command": "del ./a.exe ; g++ -Wall -O2 '${file}' ; ./a.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true

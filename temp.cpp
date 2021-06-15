@@ -4,15 +4,12 @@ using namespace std;
 
 int main()
 {
-   char c1, c2;
+   int p = 2, q = 3;
 
+   p += p++ + q++;
 
-   cin>>c1;
-
-   cout<<"Enter next char:"<<endl;
-   cout<<"Enter next char:"<<endl;
-
-   cin>>c2;
+   cout << p << endl;
+   cout << q << endl;
 
    return 0;
 }

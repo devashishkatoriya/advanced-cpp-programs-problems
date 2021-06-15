@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    int n, m, i, j, temp;
+    int n, m, temp;
 
     int arr[3][4] = {
         {0, 0, 1, 1},
